@@ -1,0 +1,10 @@
+^C:\USERS\TROIA\ONEDRIVE\DOCUMENTS\DIABLO-X\LAUNCHER\CPP\CMAKEFILES\1D2784F629FE54EEB22C73D95583C58F\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/troia/OneDrive/Documents/diablo-x/launcher/cpp -BC:/Users/troia/OneDrive/Documents/diablo-x/launcher/cpp --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/troia/OneDrive/Documents/diablo-x/launcher/cpp/native_library.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
