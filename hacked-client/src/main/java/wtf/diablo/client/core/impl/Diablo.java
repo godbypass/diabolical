@@ -178,7 +178,6 @@ public final class Diablo {
                 .addModule(NotificationsModule.class)
                 .addModule(KeepSprintModule.class)
                 .addModule(SpotifyPlayerModule.class)
-                .addModule(IRCModule.class)
                 .addModule(CustomCapeModule.class)
                 .addModule(SessionInfoModule.class)
                 .addModule(ItemOffsetModule.class)

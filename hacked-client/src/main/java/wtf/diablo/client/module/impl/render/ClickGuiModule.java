@@ -1,5 +1,6 @@
 package wtf.diablo.client.module.impl.render;
 
+import lombok.Getter;
 import org.lwjgl.input.Keyboard;
 import wtf.diablo.client.core.impl.Diablo;
 import wtf.diablo.client.gui.clickgui.dropdown.impl.DropdownClickGui;
@@ -14,13 +15,14 @@ import wtf.diablo.client.setting.impl.ModeSetting;
 import static wtf.diablo.client.util.render.ColorUtil.AMBIENT_COLOR;
 
 @ModuleMetaData(
-        name = "Click GUI",
+        name = "ClickGUI",
         description = "Opens the ClickGui",
         category = ModuleCategoryEnum.RENDER,
-        key = Keyboard.KEY_RSHIFT
+        key = 25
 )
 public final class ClickGuiModule extends AbstractModule {
     private final ModeSetting<ClickGUIMode> clickGUIModeModeSetting = new ModeSetting<>("ClickGUIMode", ClickGUIMode.DROPDOWN);
+    @Getter
     private final BooleanSetting outline = new BooleanSetting("Outline", false);
 
     private DropdownClickGui clickGui;
@@ -62,7 +64,4 @@ public final class ClickGuiModule extends AbstractModule {
         }
     }
 
-    public BooleanSetting getOutline() {
-        return outline;
-    }
 }

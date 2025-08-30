@@ -21,7 +21,8 @@ public final class FontHandler {
             ConcurrentLinkedQueue<TextureData> textureQueue = new ConcurrentLinkedQueue<>();
             int size = Integer.parseInt(key.split(" ")[1]);
             String name = key.split(" ")[0];
-            InputStream inputStream = FontHandler.class.getResourceAsStream("/assets/minecraft/diablo/font/" + name + ".ttf");
+            InputStream inputStream = FontHandler.class.getResourceAsStream("/assets/minecraft/diablo/font/" + name + ".ttf"); // TODO: fix this, temp fix cuz idk diablo devs were retarded LOL
+            //InputStream inputStream = FontHandler.class.getResourceAsStream("/assets/minecraft/diablo/font/" + name + ".ttf"); original line
 
             assert inputStream != null;
             Font font = null;

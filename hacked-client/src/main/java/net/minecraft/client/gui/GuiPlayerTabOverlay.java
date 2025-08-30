@@ -24,7 +24,6 @@ import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.WorldSettings;
 import wtf.diablo.client.core.impl.Diablo;
-import wtf.diablo.client.module.impl.misc.IRCModule;
 
 public class GuiPlayerTabOverlay extends Gui {
     private static final Ordering<NetworkPlayerInfo> field_175252_a = Ordering.from(new GuiPlayerTabOverlay.PlayerComparator());
@@ -178,33 +177,33 @@ public class GuiPlayerTabOverlay extends Gui {
                     j2 += 9;
                 }
 
-                final IRCModule ircModule = Diablo.getInstance().getModuleRepository().getModuleInstance(IRCModule.class);
-
-                if (ircModule.isEnabled()) {
-                    if (ircModule.getIrcClient() == null) {
-                        continue;
-                    }
-
-                    final Map<String, IRCModule.DiabloIRCUser> diabloIRCUserMap = ircModule.getConnectedUsers();
-
-                    try {
-                        final String username = this.mc.theWorld.getPlayerEntityByUUID(gameprofile.getId()).getName();
-
-                        if (diabloIRCUserMap.containsKey(username)) {
-                            final IRCModule.DiabloIRCUser diabloIRCUser = diabloIRCUserMap.get(username);
-
-                            final String user = diabloIRCUser.getUsername();
-                            final ChatFormatting rank = diabloIRCUser.getRank().getChatFormatting();
-
-                            final String addition = ChatFormatting.WHITE + " (" + rank + user + ChatFormatting.WHITE + ")" + ChatFormatting.RESET;
-
-                            s1 = s1.replace(username, username + addition);
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                }
+//                final IRCModule ircModule = Diablo.getInstance().getModuleRepository().getModuleInstance(IRCModule.class);
+//
+//                if (ircModule.isEnabled()) {
+//                    if (ircModule.getIrcClient() == null) {
+//                        continue;
+//                    }
+//
+//                    final Map<String, IRCModule.DiabloIRCUser> diabloIRCUserMap = ircModule.getConnectedUsers();
+//
+//                    try {
+//                        final String username = this.mc.theWorld.getPlayerEntityByUUID(gameprofile.getId()).getName();
+//
+//                        if (diabloIRCUserMap.containsKey(username)) {
+//                            final IRCModule.DiabloIRCUser diabloIRCUser = diabloIRCUserMap.get(username);
+//
+//                            final String user = diabloIRCUser.getUsername();
+//                            final ChatFormatting rank = diabloIRCUser.getRank().getChatFormatting();
+//
+//                            final String addition = ChatFormatting.WHITE + " (" + rank + user + ChatFormatting.WHITE + ")" + ChatFormatting.RESET;
+//
+//                            s1 = s1.replace(username, username + addition);
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                }
 
                 if (networkplayerinfo1.getGameType() == WorldSettings.GameType.SPECTATOR) {
                     s1 = EnumChatFormatting.ITALIC + s1;

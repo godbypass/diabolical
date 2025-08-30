@@ -17,7 +17,6 @@ import org.apache.logging.log4j.Logger;
 import org.lwjgl.Sys;
 import wtf.diablo.auth.DiabloSession;
 import wtf.diablo.client.core.impl.Diablo;
-import wtf.diablo.client.module.impl.misc.IRCModule;
 import wtf.diablo.client.module.impl.misc.StreamerModeModule;
 
 public class GuiNewChat extends Gui
@@ -59,8 +58,6 @@ public class GuiNewChat extends Gui
                 GlStateManager.scale(f1, f1, 1.0F);
 
                 final StreamerModeModule module = Diablo.getInstance().getModuleRepository().getModuleInstance(StreamerModeModule.class);
-
-                final IRCModule ircModule = Diablo.getInstance().getModuleRepository().getModuleInstance(IRCModule.class);
 
                 for (int i1 = 0; i1 + this.scrollPos < this.field_146253_i.size() && i1 < i; ++i1)
                 {
