@@ -86,60 +86,60 @@ public final class Diablo {
 
         final String sessionID = System.getProperty("sessionID");
         this.diabloSession = new DiabloSession(sessionID);
-        this.diabloSession.update();
+//        this.diabloSession.update();
 
-        if (diabloSession.getHwid() == null) {
-            throw new RuntimeException("HWID is null, exiting...");
-        }
+//        if (diabloSession.getHwid() == null) {
+//            throw new RuntimeException("HWID is null, exiting...");
+//        }
+//
+//        if (diabloSession.getUsername() == null) {
+//            throw new RuntimeException("Username is null, exiting...");
+//        }
+//
+//        if (diabloSession.getRank() == null) {
+//           throw new RuntimeException("Rank is null, exiting...");
+//        }
+//
+//        if (diabloSession.getToken() == null) {
+//            throw new RuntimeException("Token is null, exiting...");
+//        }
 
-        if (diabloSession.getUsername() == null) {
-            throw new RuntimeException("Username is null, exiting...");
-        }
-
-        if (diabloSession.getRank() == null) {
-           throw new RuntimeException("Rank is null, exiting...");
-        }
-
-        if (diabloSession.getToken() == null) {
-            throw new RuntimeException("Token is null, exiting...");
-        }
-
-        System.out.println("HWID: " + diabloSession.getHwid());
-        System.out.println("Username: " + diabloSession.getUsername());
-        System.out.println("Rank: " + diabloSession.getRank());
-        System.out.println("Token: " + diabloSession.getToken());
+//        System.out.println("HWID: " + diabloSession.getHwid());
+//        System.out.println("Username: " + diabloSession.getUsername());
+//        System.out.println("Rank: " + diabloSession.getRank());
+//        System.out.println("Token: " + diabloSession.getToken());
 
         System.out.println("Current HWID: " + HwidUtil.generateHwid());
 
-        final HttpResponse<String> contentResponse = Unirest.get("https://diablo.wtf/api/v1/auth/hwid/isSet")
-                .header("Authorization", this.diabloSession.getToken())
-                .asString();
+//        final HttpResponse<String> contentResponse = Unirest.get("https://diablo.wtf/api/v1/auth/hwid/isSet")
+//                .header("Authorization", this.diabloSession.getToken())
+//                .asString();
+//
+//        if (contentResponse.getStatus() != 200) {
+//            throw new RuntimeException("Failed to get content response, exiting...");
+//        }
 
-        if (contentResponse.getStatus() != 200) {
-            throw new RuntimeException("Failed to get content response, exiting...");
-        }
+//        final JsonObject contentBody = Constants.GSON.fromJson(contentResponse.getBody(), JsonObject.class);
+//        final boolean hwidSet = contentBody.get("isSet").getAsBoolean();
 
-        final JsonObject contentBody = Constants.GSON.fromJson(contentResponse.getBody(), JsonObject.class);
-        final boolean hwidSet = contentBody.get("isSet").getAsBoolean();
-
-        if (!hwidSet) {
-            final JsonObject hwid = new JsonObject();
-            hwid.addProperty("hwid", HwidUtil.generateHwid());
-
-            final HttpResponse<String> hwidResponse = Unirest.post("https://diablo.wtf/api/v1/auth/hwid/set")
-                    .header("Authorization", this.diabloSession.getToken())
-                    .header("Content-Type", "application/json")
-                    .body(Constants.GSON.toJson(hwid))
-                    .asString();
-
-            if (hwidResponse.getStatus() != 200) {
-                throw new RuntimeException("Failed to set HWID, exiting...");
-            }
-        }
-
-        if (!diabloSession.getHwid().equals(HwidUtil.generateHwid())) {
-            throw new RuntimeException("HWID mismatch, exiting...");
-        }
+//        if (!hwidSet) {
+//            final JsonObject hwid = new JsonObject();
+//            hwid.addProperty("hwid", HwidUtil.generateHwid());
+//
+//            final HttpResponse<String> hwidResponse = Unirest.post("https://diablo.wtf/api/v1/auth/hwid/set")
+//                    .header("Authorization", this.diabloSession.getToken())
+//                    .header("Content-Type", "application/json")
+//                    .body(Constants.GSON.toJson(hwid))
+//                    .asString();
+//
+//            if (hwidResponse.getStatus() != 200) {
+//                throw new RuntimeException("Failed to set HWID, exiting...");
+//            }
+//        }
+//
+//        if (!diabloSession.getHwid().equals(HwidUtil.generateHwid())) {
+//            throw new RuntimeException("HWID mismatch, exiting...");
+//        }
 
         this.mainDirectory = new File("Diablo");
         this.configDirectory = new File(this.mainDirectory, "config");

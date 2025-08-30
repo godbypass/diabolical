@@ -398,7 +398,7 @@ public class WorldClient extends World
      */
     public CrashReportCategory addWorldInfoToCrashReport(CrashReport report)
     {
-        CrashReportCategory crashreportcategory = super.addWorldInfoToCrashReport(report);
+            CrashReportCategory crashreportcategory = super.addWorldInfoToCrashReport(report);
         crashreportcategory.addCrashSectionCallable("Forced entities", new Callable()
         {
             private static final String __OBFID = "CL_00000883";

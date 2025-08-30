@@ -96,33 +96,33 @@ public class GuiNewChat extends Gui
 
                                 final String username = Minecraft.getMinecraft().thePlayer.getName();
 
-                                if (module.isEnabled()) {
-                                    if (s.contains(username) && module.isEnabled() && module.isHideName()) {
-                                        final DiabloSession session = Diablo.getInstance().getDiabloSession();
-                                        final String user = session.getUsername();
-                                        final ChatFormatting rank = session.getRank().getChatFormatting();
-
-                                        s = s.replace(username, rank + user + ChatFormatting.RESET);
-                                    }
-                                } else if (ircModule.isEnabled()) {
-                                   /* final Map<String, IRCModule.DiabloIRCUser> diabloIRCUserMap = ircModule.getConnectedUsers();
-
-                                    /*
-                                    //TODO: Fix this not displaying IRC users
-                                    if (s.contains(username)) {
-                                        final IRCModule.DiabloIRCUser diabloIRCUser = diabloIRCUserMap.get(username);
-
-                                        final String user = diabloIRCUser.getUsername();
-                                        final ChatFormatting rank = diabloIRCUser.getRank().getChatFormatting();
-
-                                        final String addition = ChatFormatting.WHITE + " (" + rank + user + ChatFormatting.WHITE + ")" + ChatFormatting.RESET;
-
-                                        s = s.replace(username, username + addition);
-                                    } */
-
-
-
-                                }
+//                                if (module.isEnabled()) {
+//                                    if (s.contains(username)  && module.isHideName()) {
+//                                        final DiabloSession session = Diablo.getInstance().getDiabloSession();
+//                                        final String user = session.getUsername();
+//                                        final ChatFormatting rank = session.getRank().getChatFormatting();
+//
+//                                        s = s.replace(username, rank + user + ChatFormatting.RESET);
+//                                    }
+//                                } else if (ircModule.isEnabled()) {
+//                                   /* final Map<String, IRCModule.DiabloIRCUser> diabloIRCUserMap = ircModule.getConnectedUsers();
+//
+//                                    /*
+//                                    //TODO: Fix this not displaying IRC users
+//                                    if (s.contains(username)) {
+//                                        final IRCModule.DiabloIRCUser diabloIRCUser = diabloIRCUserMap.get(username);
+//
+//                                        final String user = diabloIRCUser.getUsername();
+//                                        final ChatFormatting rank = diabloIRCUser.getRank().getChatFormatting();
+//
+//                                        final String addition = ChatFormatting.WHITE + " (" + rank + user + ChatFormatting.WHITE + ")" + ChatFormatting.RESET;
+//
+//                                        s = s.replace(username, username + addition);
+//                                    } */
+//
+//
+//
+//                                }
 
                                 GlStateManager.enableBlend();
                                 this.mc.fontRendererObj.drawStringWithShadow(s, (float)i2, (float)(j2 - 8), 16777215 + (l1 << 24));
