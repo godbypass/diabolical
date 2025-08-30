@@ -1,11 +1,11 @@
 package best.azura.eventbus.core;
 
-import hydrogen.Hydrogen;
+import wtf.diablo.client.core.impl.Diablo;
 
 public interface Event{
 
     default Event fire() {
-        Hydrogen.getInstance().getEventBus().call(this);
+        Diablo.getInstance().getEventBus().call(this);
         return this;
     }
 }

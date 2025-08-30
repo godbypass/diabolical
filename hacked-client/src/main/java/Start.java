@@ -16,7 +16,7 @@ public final class Start
         final File assets_loc = new File(minecraft_loc, "assets");
 
         Main.main(concat(new String[] {
-                "--version", "mcp",
+                "--version", "Steve",
                 "--accessToken", "0",
                 "--gameDir", minecraft_loc.exists() ? minecraft_loc.toString() : "",
                 "--assetsDir", assets_loc.exists() ? assets_loc.toString() : "assets",

@@ -1,7 +1,6 @@
 package wtf.diablo.client.core.impl;
 
 import best.azura.eventbus.core.EventBus;
-import by.radioegor146.nativeobfuscator.Native;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.viaversion.viaversion.api.Via;
@@ -60,7 +59,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-@Native
 public final class Diablo {
     private static final Diablo INSTANCE = new Diablo();
     private static final Logger LOGGER = LoggerFactory.getLogger(Diablo.class);
@@ -326,7 +324,6 @@ public final class Diablo {
         return friendRepository;
     }
 
-    @Native
     public static boolean verifyDiabloSession(final DiabloSession diabloSession) {
         final String token = diabloSession.getToken();
         final String hwid = diabloSession.getHwid();
