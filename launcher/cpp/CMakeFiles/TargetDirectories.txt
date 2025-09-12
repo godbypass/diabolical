@@ -1,0 +1,3 @@
+C:/Users/troia/OneDrive/Documents/diablo-x/launcher/cpp/CMakeFiles/native_library.dir
+C:/Users/troia/OneDrive/Documents/diablo-x/launcher/cpp/CMakeFiles/ALL_BUILD.dir
+C:/Users/troia/OneDrive/Documents/diablo-x/launcher/cpp/CMakeFiles/ZERO_CHECK.dir
